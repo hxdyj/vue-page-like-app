@@ -5,15 +5,15 @@ import { RouteLocationNormalized } from 'vue-router'
 import { onRouteChangeDetectTransition } from './route/routeTransition';
 export { setRalations } from './route/routeRalation';
 export { Scroll } from "./components/install";
+type DefaultTransitionName = 'fade' | 'slide-right' | 'slide-left'
 export interface MetaType {
     deepth: number,
-    transition?: string
+    transition?: DefaultTransitionName & string
 }
-
 export type TransitionOption = {
-    onSameLevel: (to: RouteLocationNormalized, from: RouteLocationNormalized) => void
-    onDeep: (to: RouteLocationNormalized, from: RouteLocationNormalized) => void
-    onShallow: (to: RouteLocationNormalized, from: RouteLocationNormalized) => void
+    onSameLevel?: (to: RouteLocationNormalized, from: RouteLocationNormalized) => void
+    onDeep?: (to: RouteLocationNormalized, from: RouteLocationNormalized) => void
+    onShallow?: (to: RouteLocationNormalized, from: RouteLocationNormalized) => void
 }
 export function setKeepAliveAndTransition(to: RouteLocationNormalized, from: RouteLocationNormalized, transitionOption?: TransitionOption) {
     onRouteChangeDetectKeepAlive(to, from)
