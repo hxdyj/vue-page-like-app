@@ -6,9 +6,9 @@ declare function setRalations(router: Router): void;
 declare const Scroll: Plugin;
 
 declare type DefaultTransitionName = 'fade' | 'slide-right' | 'slide-left';
-interface MetaType {
+interface MetaType<T> {
     deepth: number;
-    transition?: DefaultTransitionName & string;
+    transition?: DefaultTransitionName | T;
 }
 declare type TransitionOption = {
     onSameLevel?: (to: RouteLocationNormalized, from: RouteLocationNormalized) => void;

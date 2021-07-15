@@ -6,9 +6,9 @@ import { onRouteChangeDetectTransition } from './route/routeTransition';
 export { setRalations } from './route/routeRalation';
 export { Scroll } from "./components/install";
 type DefaultTransitionName = 'fade' | 'slide-right' | 'slide-left'
-export interface MetaType {
+export interface MetaType<T> {
     deepth: number,
-    transition?: DefaultTransitionName & string
+    transition?: DefaultTransitionName | T
 }
 export type TransitionOption = {
     onSameLevel?: (to: RouteLocationNormalized, from: RouteLocationNormalized) => void
