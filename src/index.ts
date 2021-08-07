@@ -1,11 +1,13 @@
 import './assets/style/transition.scss'
 
-import { onRouteChangeDetectKeepAlive } from "./route/routeKeepAlive";
+import { onRouteChangeDetectKeepAlive, routeQueue } from "./route/routeKeepAlive";
+export { routeQueue } from "./route/routeKeepAlive";
 import { RouteLocationNormalized } from 'vue-router'
 import { onRouteChangeDetectTransition } from './route/routeTransition';
 export { setRalations } from './route/routeRalation';
 export { Scroll } from "./components/install";
 type DefaultTransitionName = 'fade' | 'slide-right' | 'slide-left'
+
 export interface MetaType<T> {
     deepth: number,
     transition?: DefaultTransitionName | T

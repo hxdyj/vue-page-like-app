@@ -1,5 +1,8 @@
-import { Router, RouteLocationNormalized } from 'vue-router';
+import * as vue from 'vue';
 import { Plugin } from 'vue';
+import { Router, RouteLocationNormalized } from 'vue-router';
+
+declare let routeQueue: vue.Ref<any[]>;
 
 declare function setRalations(router: Router): void;
 
@@ -17,4 +20,4 @@ declare type TransitionOption = {
 };
 declare function setKeepAliveAndTransition(to: RouteLocationNormalized, from: RouteLocationNormalized, transitionOption?: TransitionOption): void;
 
-export { MetaType, Scroll, TransitionOption, setKeepAliveAndTransition, setRalations };
+export { MetaType, Scroll, TransitionOption, routeQueue, setKeepAliveAndTransition, setRalations };
