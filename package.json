@@ -1,9 +1,10 @@
 {
   "name": "vue-page-like-app",
-  "version": "0.0.20",
+  "version": "0.0.21",
   "author": "hxdyj",
   "license": "MIT",
   "devDependencies": {
+    "@rollup/plugin-strip": "^2.1.0",
     "@types/lodash": "^4.14.171",
     "rollup-plugin-dts": "^3.0.2",
     "rollup-plugin-scss": "^3.0.0",

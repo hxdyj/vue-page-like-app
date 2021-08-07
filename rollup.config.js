@@ -1,6 +1,8 @@
 
 import { uglify } from 'rollup-plugin-uglify'
 import typescript from 'rollup-plugin-typescript';
+import strip from '@rollup/plugin-strip';
+
 import scss from 'rollup-plugin-scss';
 import dts from 'rollup-plugin-dts';
 export default [
@@ -18,6 +20,9 @@ export default [
             }),
             uglify(),
             typescript(),
+            strip({
+                include: '**/*.(ts|js)',
+            }),
         ]
     },
     {
